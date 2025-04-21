@@ -1,0 +1,12 @@
+elasticsearchUrl: http://elasticsearch:9200
+
+server:
+  type: default            # default, but we specify to tweak hosts
+  applicationConnectors:
+    - type: http
+      port: 8080
+      bindHost: 0.0.0.0   # ← reachable outside container
+  adminConnectors:
+    - type: http
+      port: 8081
+      bindHost: 0.0.0.0   # ← expose admin endpoints
